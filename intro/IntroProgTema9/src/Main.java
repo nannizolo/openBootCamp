@@ -1,13 +1,25 @@
 public class Main {
     public static void main(String[] args) {
-        Cliente persona1 = new Cliente();
 
-        persona1.setEdad(27);
-        persona1.setNombre("Gaston Zolorzano");
-        persona1.setTelefono(43920821);
-        persona1.setCredito(2000);
+        Cliente cliente1 = new Cliente();
 
-        System.out.println("La persona" +" "+ persona1.getNombre() +" "+ "tiene de edad " +  persona1.getEdad() +" "+"años y su numero de telefono es" +" "+ persona1.getTelefono());
+        cliente1.setEdad(27);
+        cliente1.setNombre("Gaston Zolorzano");
+        cliente1.setTelefono(43920821);
+        cliente1.setCredito(2000);
+
+        System.out.println("El cliente es" +" "+ cliente1.getNombre() +" "+ "tiene de edad " +  cliente1.getEdad() +" "+"años y su numero de telefono es" +" "+ cliente1.getTelefono());
+        System.out.println("El credito de la persona es de" + " " + cliente1.getCredito());
+
+        Trabajador trabajador1 = new Trabajador();
+
+        trabajador1.setEdad(20);
+        trabajador1.setNombre("Nahuel Diaz");
+        trabajador1.setTelefono(43922121);
+        trabajador1.setSalario(4000);
+
+        System.out.println("El trabajador es" +" "+ trabajador1.getNombre() +" "+ "tiene de edad " +  trabajador1.getEdad() +" "+"años y su numero de telefono es" +" "+ trabajador1.getTelefono());
+        System.out.println("El salario mensual de la persona es de" + " " + trabajador1.getSalario());
 
     }
 }
@@ -37,10 +49,8 @@ class Persona {
         return this.telefono;
     }
 
-
 }
-
-    class Cliente extends Persona{
+class Cliente extends Persona{
     private int credito;
         public void setCredito (int credito){
             this.credito = credito;
@@ -48,4 +58,15 @@ class Persona {
         public int getCredito(){
             return this.credito;
         }
+}
+
+class Trabajador extends Persona{
+    private int salario;
+    public void setSalario (int salario){
+        this.salario = salario;
+    }
+
+    public int getSalario() {
+        return this.salario;
+    }
 }
